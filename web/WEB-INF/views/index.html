@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" >
+    <title>Index</title>
+    <script th:src="@{/js/jquery-3.2.0.js}"></script>
+    <script language="javascript" type="text/javascript">
+        $(function () {
+            $("#queryBook").keypress(function (e) {
+                if (e.which == 13) {
+                    if ($("#queryBook").val() != "") {
+                        var postUrl = "./book/" + $("#queryBook").val() + "/detail";
+                        window.location.href = postUrl;
+                    }
+                }
+            });
+
+            $("#studentId").keypress(function (e) {
+                if (e.which == 13){
+                    var postUrl = "./book/" + $("#appointBook").val()+"/appoint?studentId=" + $("#studentId").val();
+                    window.location.href = postUrl;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>本页由 Thymeleaf 负责渲染</p>
+    <ul>
+        <li>显示所有书本 <a th:href="@{/book/list}">※</a></li>
+        <li>查询书本信息
+                <input id="queryBook" type="text" placeholder="请输入书号查询"/>
+        </li>
+        <li>预约书本
+            <input id="appointBook" type="text" placeholder="请输入书号预约"/>
+            <input id="studentId" type="text" placeholder="请输入学号"/>
+        </li>
+    </ul>
+</body>
+</html>

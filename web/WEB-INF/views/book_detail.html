@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="|${book.name} - 书籍查询|">Title</title>
+
+</head>
+<body>
+<div class="book">
+    <h3 th:text="${book.name}">book</h3>
+    <p th:text="${book.bookId}">bookId</p>
+    <p th:text="${book.number}">number</p>
+</div>
+</body>
+</html>

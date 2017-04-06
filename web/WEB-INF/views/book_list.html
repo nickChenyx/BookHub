@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Book-List</title>
+    <script src="/WEB-INF/js/jquery-3.2.0.js"></script>
+    <style type="text/css">
+        h1{
+            margin:0 auto;
+        }
+        h3,p{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<h1>书单</h1>
+<div class="booklist">
+    <div class="book" th:each="book: ${list}">
+        <h3 th:text="${book.getName()}">book</h3>
+        <p th:text="${book.getBookId()}">bookId</p>
+        <p th:text="${book.getNumber()}">number</p>
+    </div>
+</div>
+</body>
+</html>
